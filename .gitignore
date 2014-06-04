@@ -14,7 +14,7 @@ Desktop.ini
 
 
 #### Generated files
-/build
+# /build
 
 #### Node modules
 /node_modules

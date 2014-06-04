@@ -1,5 +1,6 @@
 window.addEventListener('load', function() {
-    var canvas    = document.querySelector('canvas');
+    var canvas    = document.querySelector('canvas'),
+        FIELD_SIZE = 1024;
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
     canvas.style.width = window.innerWidth + 'px';
@@ -9,7 +10,7 @@ window.addEventListener('load', function() {
         game: new GameLoop({
             world: new World({
                 canvas       : canvas,
-                extents      : new Rectangle(new Vector2d(0, 0), 2000, 2000),
+                extents      : new Rectangle(new Vector2d(0, 0), FIELD_SIZE, FIELD_SIZE),
                 viewport     : new Rectangle(new Vector2d(0, 0), canvas.width, canvas.height),
                 backgroundEl : document.documentElement
             })
@@ -32,8 +33,8 @@ window.addEventListener('load', function() {
             }
 
             Squirts.game.world.generate({
-                count  : 160,
-                radius : 20,
+                count  : 50,
+                radius : 30,
                 speed  : 80
             });
 
