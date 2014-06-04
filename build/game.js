@@ -876,8 +876,7 @@ World.prototype.updateViewport = function() {
     }
 };
 window.addEventListener('load', function() {
-    var canvas    = document.querySelector('canvas'),
-        FIELD_SIZE = 1024;
+    var canvas    = document.querySelector('canvas');;
     canvas.width  = window.innerWidth;
     canvas.height = window.innerHeight;
     canvas.style.width = window.innerWidth + 'px';
@@ -887,7 +886,7 @@ window.addEventListener('load', function() {
         game: new GameLoop({
             world: new World({
                 canvas       : canvas,
-                extents      : new Rectangle(new Vector2d(0, 0), FIELD_SIZE, FIELD_SIZE),
+                extents      : new Rectangle(new Vector2d(0, 0), canvas.width, canvas.height),
                 viewport     : new Rectangle(new Vector2d(0, 0), canvas.width, canvas.height),
                 backgroundEl : document.documentElement
             })
@@ -910,7 +909,7 @@ window.addEventListener('load', function() {
             }
 
             Squirts.game.world.generate({
-                count  : 50,
+                count  : 30,
                 radius : 30,
                 speed  : 80
             });
