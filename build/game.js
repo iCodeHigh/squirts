@@ -886,7 +886,7 @@ window.addEventListener('load', function() {
         game: new GameLoop({
             world: new World({
                 canvas       : canvas,
-                extents      : new Rectangle(new Vector2d(0, 0), canvas.width, canvas.height),
+                extents      : new Rectangle(new Vector2d(0, 0), canvas.width * 2, canvas.height * 2),
                 viewport     : new Rectangle(new Vector2d(0, 0), canvas.width, canvas.height),
                 backgroundEl : document.documentElement
             })
@@ -909,8 +909,8 @@ window.addEventListener('load', function() {
             }
 
             Squirts.game.world.generate({
-                count  : 30,
-                radius : 30,
+                count  : 20,
+                radius : 20,
                 speed  : 80
             });
 
